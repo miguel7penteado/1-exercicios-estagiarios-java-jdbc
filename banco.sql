@@ -1,4 +1,6 @@
 
+
+
 -- Criando um esquema chamado agenda;
 create database agenda;
 
@@ -13,3 +15,10 @@ create table contatos
 
 -- Criando uma chave primária para esta tabela;
 alter table agenda.contatos add contraint "chave1" primary key(id);
+
+-- Criando o usuário administrador-banco com privilegios totais para o esquema agenda
+grant all on agenda.* to "administrador-banco" identified by "senha-administrador";
+
+-- Tornando permanentes as alterações da criação de usuário.
+flush privileges;
+

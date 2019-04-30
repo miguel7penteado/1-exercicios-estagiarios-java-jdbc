@@ -7,10 +7,10 @@ import java.sql.DriverManager;
 public class ConexaoBanco
 {
 	//Nome do usuário do mysql
-	private static final String NOME_DE_USUARIO = "root";
+	private static final String NOME_DE_USUARIO = "administrador-banco";
 
 	//Senha do mysql
-	private static final String SENHA_USUARIO_BANCO = "root";
+	private static final String SENHA_USUARIO_BANCO = "senha-administrador";
 
 	//Dados de caminho, porta e nome da base de dados que irá ser feita a conexão
 	private static final String ENDERECO_CONEXAO_BANCO = "jdbc:mysql://localhost:3306/agenda";
