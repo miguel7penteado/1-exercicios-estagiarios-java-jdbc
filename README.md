@@ -31,6 +31,7 @@ flush privileges;
 ## 1.2 - Definir um arquivo de Conexão JDBC
 Um programa java, para utilizar a interface JDBC e poder se conectar virtualmente com qualquer Banco de Dados Relacional, precisa carregar um pacote **.jar** disponibilizado para aquele modelo de SGBD específico. Portanto vamos precisar obter (fazer o download) o pacote java contendo as classes do MySQL/MariaDB, pois será esse SGBD que iremos utilizar no exemplo. vamos fazer o download deste arquivo [https://downloads.mariadb.com/Connectors/java/connector-java-2.4.1/mariadb-java-client-2.4.1.jar](https://downloads.mariadb.com/Connectors/java/connector-java-2.4.1/mariadb-java-client-2.4.1.jar).
 Após salvar-lo no diretório de classes compiladas, ele será um dos pacotes **jar** que será carregado com nossa classe principal.
+arquivo **ConexaoBanco.java**
 ```java
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -72,5 +73,70 @@ public class ConexaoBanco
 ```
 
 ## 1.3 - Definir uma Classe de interfaceamento com o Modelo Relacional (Model).
+Vamos agora criar um continente para os registros em memória digitados pelo usuário em seu programa java de interface com o Banco.
+arquivo **MapeiaTabelaContato.java**
+```java
+import java.util.Date;
+
+// Contato
+ 
+public class MapeiaTabelaContato
+{
+
+	private int     cpf;
+	private String  nome;
+	private int     idade;
+	private Date    dataCadastro;
+
+	// getId
+	public int obtemCpf()
+	{
+		return cpf;
+	}
+
+	// setId
+	public void gravaCpf(int parametro_cpf)
+	{
+		this.cpf = parametro_cpf;
+	}
+
+	// getNome
+	public String obtemNome()
+	{
+		return nome;
+	}
+
+	public void gravaNome(String parametro_nome)
+	{
+		this.nome = parametro_nome;
+	}
+
+	// getIdade
+	public int obtemIdade()
+	{
+		return idade;
+	}
+
+	// setIdade
+	public void gravaIdade(int parametro_idade)
+	{
+		this.idade = parametro_idade;
+	}
+
+	// getDataCadastro
+	public Date obtemDataCadastro()
+	{
+		return dataCadastro;
+	}
+
+	// setDataCadastro
+	public void gravaDataCadastro(Date paremtro_data_cadastro)
+	{
+		this.dataCadastro = paremtro_data_cadastro;
+	}
+}
+
+```
+
 ## 1.4 - Definir uma classe de operações Inserir, Alterar, Remover e Pesquisar (Data Acess Object).
 ## 1.5 - Criar uma classe de interface com o usuário.
